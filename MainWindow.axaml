@@ -1,0 +1,76 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="730" d:DesignHeight="800"
+		Width="800"
+		Height="730"
+        x:Class="My_WD_File_Recovery.MainWindow"
+        Title="My_WD_File_Recovery"
+		TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+		ExtendClientAreaToDecorationsHint="True"
+		Foreground="White"
+		FontFamily="Calibri">
+	
+	
+	<Window.Styles>
+		<Style Selector="Button">
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontWeight" Value="Heavy"/>
+			<!--<Setter Property="Background" Value="#F8F7F3"/>-->
+
+		</Style>
+		
+	</Window.Styles>
+
+	<Panel>
+		<ExperimentalAcrylicBorder IsHitTestVisible="False">
+			<ExperimentalAcrylicBorder.Material>
+				<ExperimentalAcrylicMaterial
+					BackgroundSource="Digger"
+					TintColor="Black"
+					TintOpacity="1"
+					MaterialOpacity="0.65" />
+			</ExperimentalAcrylicBorder.Material>
+		</ExperimentalAcrylicBorder>
+
+
+		<Label Content="deWaardt's Western Digital My Cloud file restorer" FontSize="20"  HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+		<Label Content="Database file:" HorizontalAlignment="Left" Margin="55,150,0,0" VerticalAlignment="Top"/>
+		<Label Content="Select WD drive:" HorizontalAlignment="Left" Margin="55,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.953,0.649"/>
+		<Label Content="Select output folder:" HorizontalAlignment="Left" Margin="55,190,0,0" VerticalAlignment="Top"/>
+		<Button x:Name="dbFileSelectBtn" Content="Autodetect" IsEnabled="False" HorizontalAlignment="Left" Margin="196,150,0,0" VerticalAlignment="Top" Width="360" Click="dbFileSelectBtn_Click"/>
+		<Button x:Name="fileFolderSelectBtn" Content="[ Select ]" HorizontalAlignment="Left" Margin="196,110,0,0" VerticalAlignment="Top" Height="30" Width="523" Click="fileFolderSelectBtn_Click"/>
+		<Button  x:Name="outputFolderSelectBtn" Content="[ Select ]" HorizontalAlignment="Left" Margin="196,190,0,0" VerticalAlignment="Top" Height="30" Width="523" Click="outputFolderSelectBtn_Click"/>
+		<Label x:Name ="filesDiscoveredLabel" Content="" HorizontalAlignment="Left" Margin="95,230,0,0" VerticalAlignment="Top" Width="305"/>
+
+
+		<Button x:Name="startBtn" Content="Start" HorizontalAlignment="Center" Margin="0,272,0,0" VerticalAlignment="Top" Height="33" Width="198" Click="Button_Click"/>
+		<ProgressBar x:Name="progressBar" HorizontalAlignment="Center" Height="35" Margin="0,330,0,0" VerticalAlignment="Top" Width="625"/>
+		<Label x:Name="percentageLbl" Content="-- %" HorizontalAlignment="Center" Margin="0,370,0,0" VerticalAlignment="Top"/>
+		<Label IsVisible="False" x:Name="currfileLbl" Content="Current file:" HorizontalAlignment="Left" Margin="88,405,0,0" VerticalAlignment="Top"/>
+
+		<Button x:Name="debugStartBtn" Content="Button" HorizontalAlignment="Left" Margin="565,272,0,0" VerticalAlignment="Top" Height="33" Width="122" Click="Button_Click_1"/>
+
+
+
+		<Border Background="Transparent" Margin="0,400,0,0" Height="215" Width="628" BorderBrush="Black" BorderThickness="1">
+
+		</Border>
+		<ScrollViewer VerticalScrollBarVisibility="Hidden" x:Name="statusBoxScoller" Margin="0,400,0,0" HorizontalAlignment="Center" Height="209" Width="624">
+			<TextBlock x:Name="statusBox" FontSize="9" TextWrapping="Wrap" Text="Status: Waiting..."/>
+		</ScrollViewer>
+		<Label x:Name="amountProcessed" Content="Recovered: --/--" HorizontalAlignment="Center" Margin="0,396,0,0" VerticalAlignment="Top"/>
+		<Label Content="Time elapsed:" HorizontalAlignment="Left" Margin="88,370,0,0" VerticalAlignment="Top"/>
+		<Label x:Name="elapsedTimeLbl" Content="----" HorizontalAlignment="Left" Margin="88,396,0,0" VerticalAlignment="Top"/>
+
+		<Label Content="Time left:" HorizontalAlignment="Right" Margin="0,370,88,0" VerticalAlignment="Top"/>
+		<Label x:Name="timeLeftLbl" Content="----" HorizontalAlignment="Right" Margin="0,396,88,0" VerticalAlignment="Top"/>
+		<Button x:Name="manualSelectBtn" Content="Select Manually" HorizontalAlignment="Left" Margin="565,150,0,0" VerticalAlignment="Top" Width="154" Click="dbFileSelectBtn_Click"/>
+
+
+	</Panel>
+</Window>
